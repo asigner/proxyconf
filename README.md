@@ -98,6 +98,24 @@ Edit ```/etc/apt/apt.conf.d/proxy.conf``` file:
 Acquire::http::Proxy "http://user:pass@host:port/";
 Acquire::https::Proxy "http://user:pass@host:port/";
 ```
+## Yum configuration
+
+Edit ```/etc/yum.conf``` file:
+
+```bash
+# The proxy server - proxy server:port number
+proxy=http://user:pass@host:port
+```
+
+If the proxy needs authentication set the ```proxy_username``` and ```proxy_password```:
+ 
+```bash
+# The proxy server - proxy server:port number
+proxy=http://user:pass@host:port
+# The account details for yum connections
+proxy_username=yum-user
+proxy_password=qwerty
+```
 
 ## NPM configuration
 
