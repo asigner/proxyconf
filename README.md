@@ -16,7 +16,18 @@ Let's assume that your proxy consist out of the following parts:
 This results in a proxy URL: http://user:pass@host:port or if the proxy doesn't need authentication the simpler version http://host:port might be sufficient.
 
 
-## Configurations
+# Configurations
+
+## Linux
+
+- Environment variables
+
+Edit the file ```/etc/environment``:
+
+```bash
+http_proxy=http://user:pass@host:port/
+https_proxy=https://user:pass@host:port/
+```
 
 ## Git configuration
 
