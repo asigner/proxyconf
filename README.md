@@ -18,7 +18,7 @@ This results in a proxy URL: http://user:pass@host:port or if the proxy doesn't 
 
 ## Configurations
 
-## Git
+## Git configuration
 
 Use these Git commands:
 
@@ -34,5 +34,24 @@ Or you can edit directly your ```~/.gitconfig``` file:
         proxy = http://user:pass@host:port
 [https]
         proxy = http://user:pass@host:port
+```
+
+## Maven configuration
+
+Edit the proxies session in your ```~/.m2/settings.xml``` file:
+
+```xml
+<proxies>
+    <proxy>
+        <id>id</id>
+        <active>true</active>
+        <protocol>http</protocol>
+        <username>user</username>
+        <password>pass</password>
+        <host>host</host>
+        <port>port</port>
+        <nonProxyHosts>localhost</nonProxyHosts>
+    </proxy>
+</proxies>
 ```
 
