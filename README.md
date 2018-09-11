@@ -55,3 +55,11 @@ Edit the proxies session in your ```~/.m2/settings.xml``` file:
 </proxies>
 ```
 
+## Apt configuration
+
+Edit ```/etc/apt/apt.conf.d/proxy.conf``` file:
+
+```bash
+Acquire::http::Proxy "http://user:pass@host:port/";
+Acquire::https::Proxy "http://user:pass@host:port/";
+```
