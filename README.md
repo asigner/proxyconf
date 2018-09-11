@@ -98,3 +98,20 @@ Edit ```/etc/apt/apt.conf.d/proxy.conf``` file:
 Acquire::http::Proxy "http://user:pass@host:port/";
 Acquire::https::Proxy "http://user:pass@host:port/";
 ```
+
+## NPM configuration
+
+Use these NPM commands:
+
+```bash
+npm config set proxy http://user:pass@host:port
+npm config set https-proxy http://user:pass@host:port
+```
+
+Or you can edit directly your ```~/.npmrc``` file:
+
+```bash
+proxy=http://user:pass@host:port
+https-proxy=http://user:pass@host:port
+https_proxy=http://user:pass@host:port
+```
