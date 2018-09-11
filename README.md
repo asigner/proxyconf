@@ -36,6 +36,41 @@ Or you can edit directly your ```~/.gitconfig``` file:
         proxy = http://user:pass@host:port
 ```
 
+## Gradle configuration
+
+HTTP Only Proxy configuration
+```bash
+gradlew -Dhttp.proxyHost=127.0.0.1 -Dhttp.proxyPort=3128
+```
+
+HTTPS Only Proxy configuration
+```bash
+gradlew -Dhttps.proxyHost=127.0.0.1 -Dhttps.proxyPort=3129
+```
+
+Or to persist the proxy configuration add the properties below in your ```gradle.properties``` file and in your ```gradle/wrapper/gradle-wrapper.properties``` file if you are downloading the wrapper over a proxy.
+
+If you want to set these properties globally then add it in ```~/.gradle/gradle.properties``` file.
+
+```bash
+## Proxy setup
+systemProp.proxySet="true"
+systemProp.http.keepAlive="true"
+systemProp.http.proxyHost=host
+systemProp.http.proxyPort=port
+systemProp.http.proxyUser=user
+systemProp.http.proxyPassword=pass
+systemProp.http.nonProxyHosts=localhost|another.example.com
+
+systemProp.https.keepAlive="true"
+systemProp.https.proxyHost=host
+systemProp.https.proxyPort=port
+systemProp.https.proxyUser=user
+systemProp.https.proxyPassword=pass
+systemProp.https.nonProxyHosts=localhost|another.example.com
+## end of proxy setup
+```
+
 ## Maven configuration
 
 Edit the proxies session in your ```~/.m2/settings.xml``` file:
